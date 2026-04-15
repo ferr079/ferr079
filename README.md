@@ -5,6 +5,8 @@ Building and defending a 36-service self-hosted homelab — with Claude as AI pa
 
 [pixelium.win](https://pixelium.win) | [blog](https://blog.pixelium.win)
 
+> Currently: contributing to OpenFang (Rust AI agent framework) + building AIOps monitoring
+
 ---
 
 ## Stack
@@ -29,6 +31,7 @@ Building and defending a 36-service self-hosted homelab — with Claude as AI pa
 
 ## Featured
 
-- [pixelium.win](https://github.com/ferr079/pixelium-site) — Bilingual portfolio (Astro + Cloudflare Workers), 20 pages, live KV stats, Workers AI chat
-- [blog.pixelium.win](https://github.com/ferr079/blog-pixelium) — Technical blog on homelab ops
-- [HTB Writeups](https://github.com/ferr079/htb-writeups) — Hack The Box walkthroughs with methodology notes
+- [pixelium.win](https://github.com/ferr079/pixelium-site) — Bilingual portfolio (Astro + Cloudflare Workers), 22 pages, live KV stats, Workers AI chat
+- [blog.pixelium.win](https://github.com/ferr079/blog-pixelium) — Technical blog on homelab ops, self-hosting, and security
+- [pbs-autobackup](https://github.com/ferr079/pbs-autobackup) — Proxmox Backup Server orchestration with Wake-on-LAN
+- [cert-check](https://github.com/ferr079/cert-check) — TLS certificate expiration monitor for self-hosted services
