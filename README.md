@@ -1,21 +1,22 @@
 # > whoami
 
 Infrastructure engineer & offensive security practitioner.
-Building and defending a 36-service self-hosted homelab — with Claude as AI partner.
+Building and defending a 37-service self-hosted homelab (38 CTs + 1 VM, 3 Proxmox nodes) — with Claude as AI partner.
 
 [pixelium.win](https://pixelium.win) | [blog](https://blog.pixelium.win)
 
-> Currently: contributing to OpenFang (Rust AI agent framework) + building AIOps monitoring
+> Currently: 5 AI agents in production (OpenFang AIOps, Hermes learning loop, PentAGI pentest, RAPTOR code audit, security-auditor) + 20 blog articles
 
 ---
 
 ## Stack
 
 **Infrastructure** : Proxmox · Ansible · Traefik · CrowdSec · Wazuh · Headscale · step-ca
+**AI Agents** : OpenFang · Hermes · PentAGI · RAPTOR · MiniMax M2.7 · Ollama (RTX 3090)
 **Cloud** : Cloudflare Workers · R2 · KV · D1 · Workers AI
 **Code** : Rust · Python · Bash · TypeScript
 **Web** : Astro · Pure CSS · Cloudflare Workers
-**Monitoring** : VictoriaMetrics · Beszel · Patchmon · Loki
+**Monitoring** : VictoriaMetrics · Beszel · Patchmon · Loki · 7 Guardian crons
 
 ## CTF Profiles
 
@@ -31,7 +32,10 @@ Building and defending a 36-service self-hosted homelab — with Claude as AI pa
 
 ## Featured
 
-- [pixelium.win](https://github.com/ferr079/pixelium-site) — Bilingual portfolio (Astro + Cloudflare Workers), 22 pages, live KV stats, Workers AI chat
-- [blog.pixelium.win](https://github.com/ferr079/blog-pixelium) — Technical blog on homelab ops, self-hosting, and security
+- [pixelium.win](https://github.com/ferr079/pixelium-site) — Bilingual portfolio (Astro + Cloudflare Workers), 24 pages, live KV stats, Workers AI chat
+- [blog.pixelium.win](https://github.com/ferr079/blog-pixelium) — 20 articles on homelab ops, AIOps, self-hosting, and security
+- [homelab-scripts](https://github.com/ferr079/homelab-scripts) — 5 monitoring & backup scripts (cert-check, http-check, pve-status, loki-query, pbs-backup)
+- [claude-code-cybersec-skills](https://github.com/ferr079/claude-code-cybersec-skills) — 31 cybersecurity slash commands for Claude Code (17 offensive + 14 defensive)
+- [kv-push](https://github.com/ferr079/kv-push) — Push 14 homelab metrics to Cloudflare KV for live dashboards
 - [pbs-autobackup](https://github.com/ferr079/pbs-autobackup) — Proxmox Backup Server orchestration with Wake-on-LAN
 - [cert-check](https://github.com/ferr079/cert-check) — TLS certificate expiration monitor for self-hosted services
