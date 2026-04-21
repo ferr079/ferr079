@@ -1,11 +1,11 @@
 # > whoami
 
 Infrastructure engineer & offensive security practitioner.
-Building and defending a 37-service self-hosted homelab (38 CTs + 1 VM, 3 Proxmox nodes) — with Claude as AI partner.
+Building and defending a 55-service self-hosted homelab (55 CTs + 1 VM, 4 Proxmox nodes) — with Claude as AI partner.
 
 [pixelium.win](https://pixelium.win) | [blog](https://blog.pixelium.win)
 
-> Currently: 5 AI agents in production (OpenFang AIOps, Hermes learning loop, PentAGI pentest, RAPTOR code audit, security-auditor) + 20 blog articles
+> Currently: 4 AI agents in production (OpenFang AIOps headless + 7 Guardian crons, Hermes Telegram h24 + 4 crons, PentAGI pentest, RAPTOR code audit) + Grafana SOC dashboard + LiteLLM hub central
 
 ---
 
@@ -16,7 +16,8 @@ Building and defending a 37-service self-hosted homelab (38 CTs + 1 VM, 3 Proxmo
 **Cloud** : Cloudflare Workers · R2 · KV · D1 · Workers AI
 **Code** : Rust · Python · Bash · TypeScript
 **Web** : Astro · Pure CSS · Cloudflare Workers
-**Monitoring** : VictoriaMetrics · Beszel · Patchmon · Loki · 7 Guardian crons
+**Monitoring** : VictoriaMetrics · Grafana · Beszel · Patchmon · Loki · Healthchecks · ntfy
+**Orchestration** : LiteLLM (proxy LLM) · Dagu · n8n · MQTT (Mosquitto) · 11 automated crons
 
 ## CTF Profiles
 
@@ -32,7 +33,7 @@ Building and defending a 37-service self-hosted homelab (38 CTs + 1 VM, 3 Proxmo
 
 ## Featured
 
-- [pixelium.win](https://github.com/ferr079/pixelium-site) — Bilingual portfolio (Astro + Cloudflare Workers), 24 pages, live KV stats, Workers AI chat
+- [pixelium.win](https://github.com/ferr079/pixelium-site) — Bilingual portfolio (Astro + Cloudflare Workers), 20 pages, live KV stats, Workers AI chat
 - [blog.pixelium.win](https://github.com/ferr079/blog-pixelium) — 20 articles on homelab ops, AIOps, self-hosting, and security
 - [homelab-scripts](https://github.com/ferr079/homelab-scripts) — 5 monitoring & backup scripts (cert-check, http-check, pve-status, loki-query, pbs-backup)
 - [claude-code-cybersec-skills](https://github.com/ferr079/claude-code-cybersec-skills) — 31 cybersecurity slash commands for Claude Code (17 offensive + 14 defensive)
