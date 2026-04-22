@@ -31,6 +31,13 @@ Building and defending a 55-service self-hosted homelab (55 CTs + 1 VM, 4 Proxmo
 ![Stats](https://github-readme-stats.vercel.app/api?username=ferr079&show_icons=true&theme=tokyonight&hide_border=true)
 ![Langages](https://github-readme-stats.vercel.app/api/top-langs/?username=ferr079&layout=compact&theme=tokyonight&hide_border=true)
 
+## Recent OSS contributions
+
+- **[grafana/alloy#6108](https://github.com/grafana/alloy/pull/6108)** — *docs: add systemd journal example to Promtail migration guide.* The guide only covered file-based scrape configs; added the journal pattern that's used on most Linux hosts.
+- **[wazuh/wazuh-documentation#9512](https://github.com/wazuh/wazuh-documentation/pull/9512)** — *warn that wazuh-agent conflicts with wazuh-manager on the same host.* The agent package silently uninstalls the manager via dpkg `Conflicts`/`Replaces` — hit the bug in production, fixed the install doc with a warning admonition.
+- **[requarks/wiki#7986](https://github.com/requarks/wiki/discussions/7986)** — *bug report: `render IS NULL` causes silent HTTP 500 with no recovery path.* Minimal repro + root cause (`server/models/pages.js#L952-L969`) + suggested fix.
+- **[ublue-os/homebrew-experimental-tap#309](https://github.com/ublue-os/homebrew-experimental-tap/pull/309)** — *first cask for `claude-code-linux`*, with a livecheck that tracks the npm registry instead of the slower Google Cloud Storage endpoint.
+
 ## Featured
 
 - [pixelium.win](https://github.com/ferr079/pixelium-site) — Bilingual portfolio (Astro + Cloudflare Workers), 20 pages, live KV stats, Workers AI chat
