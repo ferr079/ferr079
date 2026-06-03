@@ -1,7 +1,7 @@
 # > whoami
 
 Infrastructure engineer & offensive security practitioner.
-Building and defending a 55-service self-hosted homelab (55 CTs + 1 VM, 4 Proxmox nodes) — with Claude as AI partner.
+Building and defending a 55-service self-hosted homelab (55 CTs + 1 VM, 4 Proxmox nodes) — operated day-to-day with **Claude Code (Max)** as AI pair-operator: writing the tooling, running the playbooks, auditing the infra.
 
 [pixelium.win](https://pixelium.win) | [blog](https://blog.pixelium.win) | [contributions](https://pixelium.win/contributions) | [lab](https://pixelium.win/ia)
 
@@ -18,6 +18,7 @@ Building and defending a 55-service self-hosted homelab (55 CTs + 1 VM, 4 Proxmo
 **Web** : Astro · Pure CSS · Cloudflare Workers
 **Monitoring** : VictoriaMetrics · Grafana · Beszel · Patchmon · Loki · Healthchecks · ntfy
 **Orchestration** : LiteLLM (4-provider failback) · Dagu · Node-RED · MQTT (Mosquitto) · 11 automated crons (8 Guardian + 3 Hermes)
+**AI workflow** : Claude Code (Max) — primary driver for infra ops, IaC & security audits · custom skills + MCP servers (Proxmox, Forgejo, NetBox, Cloudflare)
 
 ## CTF Profiles
 
