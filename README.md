@@ -5,19 +5,19 @@ Building and defending a 55-service self-hosted homelab (55 CTs + 1 VM, 4 Proxmo
 
 [pixelium.win](https://pixelium.win) | [blog](https://blog.pixelium.win) | [contributions](https://pixelium.win/contributions) | [lab](https://pixelium.win/ia)
 
-> **Currently running the AIops v2 trio**: OpenFang sentinel (8 Guardian crons) → MQTT → Hermes Telegram triage (3 crons) → SSH spawn Claude CT 196 for ephemeral remediation. Plus PentAGI (autonomous pentest, pve3 on-demand) and RAPTOR (source-code audit, distrobox). Grafana SOC dashboard with 14 panels, LiteLLM hub with 4-provider failback (MiniMax → Gemini → Groq → OpenRouter), VictoriaMetrics scraping 5 targets, Loki 30-day retention.
+> **Currently running the AIops v2 duo**: OpenFang sentinel (8 Guardian crons) → MQTT → Hermes Telegram triage (3 crons) for autonomous infra monitoring and remediation. Plus RAPTOR (source-code security audit, distrobox). Grafana SOC dashboard with 14 panels, LiteLLM hub with 4-provider failback (MiniMax → Gemini → Groq → OpenRouter), VictoriaMetrics scraping 5 targets, Loki 30-day retention.
 
 ---
 
 ## Stack
 
 **Infrastructure** : Proxmox · Ansible · Traefik · CrowdSec · Wazuh · Headscale · step-ca
-**AI Agents** : OpenFang · Hermes · Claude CT 196 (spawnable) · PentAGI · RAPTOR · MiniMax M2.7 · Ollama (RTX 3090)
+**AI Agents** : OpenFang · Hermes · RAPTOR · MiniMax M3 · Ollama (RTX 3090)
 **Cloud** : Cloudflare Workers · R2 · KV · D1 · Workers AI
 **Code** : Rust · Python · Bash · TypeScript
 **Web** : Astro · Pure CSS · Cloudflare Workers
 **Monitoring** : VictoriaMetrics · Grafana · Beszel · Patchmon · Loki · Healthchecks · ntfy
-**Orchestration** : LiteLLM (4-provider failback) · Dagu · n8n · MQTT (Mosquitto) · 11 automated crons (8 Guardian + 3 Hermes)
+**Orchestration** : LiteLLM (4-provider failback) · Dagu · Node-RED · MQTT (Mosquitto) · 11 automated crons (8 Guardian + 3 Hermes)
 
 ## CTF Profiles
 
@@ -33,10 +33,11 @@ Building and defending a 55-service self-hosted homelab (55 CTs + 1 VM, 4 Proxmo
 
 ## Recent OSS contributions
 
-- **[grafana/alloy#6108](https://github.com/grafana/alloy/pull/6108)** — *docs: add systemd journal example to Promtail migration guide.* The guide only covered file-based scrape configs; added the journal pattern that's used on most Linux hosts.
-- **[wazuh/wazuh-documentation#9512](https://github.com/wazuh/wazuh-documentation/pull/9512)** — *warn that wazuh-agent conflicts with wazuh-manager on the same host.* The agent package silently uninstalls the manager via dpkg `Conflicts`/`Replaces` — hit the bug in production, fixed the install doc with a warning admonition.
+- **[RightNow-AI/openfang#1060](https://github.com/RightNow-AI/openfang/pull/1060)** ✅ *merged* — fix(security): unified SSRF protection for WASM host calls. Closed a gap where `host_functions.rs` validated targets less strictly than `web_fetch.rs`; −42 net lines, 908 tests green.
+- **[community-scripts/ProxmoxVE#14868](https://github.com/community-scripts/ProxmoxVE/issues/14868)** ✅ *fixed* — Infisical update aborted and left the service down: the script read `Database Password:` but `setup_postgresql_db` writes `Password:`. Reported with a repro from my own CT; fixed in [#14870](https://github.com/community-scripts/ProxmoxVE/pull/14870).
+- **[grafana/alloy#6108](https://github.com/grafana/alloy/pull/6108)** — *docs: systemd journal example for the Promtail migration guide.* The guide only covered file-based scrape configs; added the journal pattern used on most Linux hosts (open, CLA signed, CI green).
+- **[wazuh/wazuh-documentation#9512](https://github.com/wazuh/wazuh-documentation/pull/9512)** — reported that `wazuh-agent` silently uninstalls `wazuh-manager` on the same host via dpkg `Conflicts`/`Replaces` — hit the bug in production.
 - **[requarks/wiki#7986](https://github.com/requarks/wiki/discussions/7986)** — *bug report: `render IS NULL` causes silent HTTP 500 with no recovery path.* Minimal repro + root cause (`server/models/pages.js#L952-L969`) + suggested fix.
-- **[ublue-os/homebrew-experimental-tap#309](https://github.com/ublue-os/homebrew-experimental-tap/pull/309)** — *first cask for `claude-code-linux`*, with a livecheck that tracks the npm registry instead of the slower Google Cloud Storage endpoint.
 
 ## Featured
 
