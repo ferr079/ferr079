@@ -1,7 +1,7 @@
 # > whoami
 
 Infrastructure engineer & offensive security practitioner.
-Building and defending a self-hosted homelab — 53 LXC containers + 1 VM across 4 Proxmox nodes — operated day-to-day with **Claude Code (Max)** as AI pair-operator: writing the tooling, running the playbooks, auditing the infra.
+Building and defending a self-hosted homelab — 48 LXC containers + 1 VM across 4 Proxmox nodes — operated day-to-day with **Claude Code (Max)** as AI pair-operator: writing the tooling, running the playbooks, auditing the infra.
 
 [pixelium.win](https://pixelium.win) | [blog](https://blog.pixelium.win) | [contributions](https://pixelium.win/contributions) | [lab](https://pixelium.win/ia)
 
@@ -34,10 +34,12 @@ Building and defending a self-hosted homelab — 53 LXC containers + 1 VM across
 
 ## Recent OSS contributions
 
-- **[gadievron/raptor#777](https://github.com/gadievron/raptor/pull/777)** — *fix(sandbox): env-overridable default profile for rootless podman/distrobox.* On rootless podman the sandbox's kernel isolation (mount-ns, Landlock) can't engage, so the `full` profile half-engages: `semgrep`/`codeql` emit nothing and `raptor scan` silently reports **0 findings in 0 files** instead of failing loudly — a security scanner that looks clean when it never ran. Makes the default profile env-overridable (open).
-- **[BerriAI/litellm#29777](https://github.com/BerriAI/litellm/pull/29777)** — *fix: MiniMax-M3 context window (512K → 1M)*. Caught while reviewing the original cost-map PR: 512K is MiniMax's long-context **billing threshold**, not the context window — the wrong value would misroute valid 512K–1M token requests (open).
+- **[gadievron/raptor#777](https://github.com/gadievron/raptor/pull/777)** — *fix(sandbox): env-overridable default profile for rootless podman/distrobox.* On rootless podman the sandbox's kernel isolation (mount-ns, Landlock) can't engage, so the `full` profile half-engages: `semgrep`/`codeql` emit nothing and `raptor scan` silently reports **0 findings in 0 files** instead of failing loudly — a security scanner that looks clean when it never ran. Makes the default profile env-overridable — **closed**: the maintainer declined the env-override on trust-model grounds but shipped his own fail-loud fix, which I validated on my setup.
+- **[BerriAI/litellm#29412](https://github.com/BerriAI/litellm/pull/29412)** — review: MiniMax-M3's context window is 1M, not the 512K **billing threshold**; the cost-map merged with the wrong value and my follow-up fix PRs were swallowed by litellm's ephemeral staging pipeline — a lesson in reading a repo's merge flow before contributing.
 - **[ublue-os/bluefin#4741](https://github.com/ublue-os/bluefin/issues/4741)** — *bug: default JXL wallpaper renders blank on F44 (no gdk-pixbuf JXL loader).* `libjxl` ships the codec but no pixbuf loader, so `gnome-bg` can't decode the default `.jxl` background. Root-caused to [`03-packages.sh#L202`](https://github.com/projectbluefin/bluefin/blob/main/build_files/base/03-packages.sh#L202), cross-referenced the sibling LTS fix (bluefin-lts#1230) and why it doesn't transpose to Fedora.
 - **[community-scripts/ProxmoxVE#14870](https://github.com/community-scripts/ProxmoxVE/pull/14870)** ✅ *merged* — Infisical update aborted and left the service down: the script read `Database Password:` but `setup_postgresql_db` writes `Password:`. Diagnosed from a production incident on my own CT, reported as [#14868](https://github.com/community-scripts/ProxmoxVE/issues/14868), fixed upstream.
+- **[community-scripts/ProxmoxVE#14995](https://github.com/community-scripts/ProxmoxVE/pull/14995)** ✅ *merged* — changedetection: migrated the Python install from pip `--ignore-installed` (duplicate dist-info + deferred crash on restart) to the project's own `setup_uv` venv helper, with automatic migration of existing installs — fixing the root cause behind their earlier #13548 band-aid (+33 −17).
+- **[community-scripts/ProxmoxVE#14996](https://github.com/community-scripts/ProxmoxVE/pull/14996)** ✅ *merged* — homelable: preserve the MCP server config across updates (it was overwritten on every run).
 - **[RightNow-AI/openfang#1060](https://github.com/RightNow-AI/openfang/pull/1060)** ✅ *merged* — fix(security): unified SSRF protection for WASM host calls. Closed a gap where `host_functions.rs` validated targets less strictly than `web_fetch.rs`; −42 net lines, 908 tests green.
 - **[grafana/alloy#6108](https://github.com/grafana/alloy/pull/6108)** — *docs: systemd journal example for the Promtail migration guide.* The guide only covered file-based scrape configs; added the journal pattern used on most Linux hosts (open — reviewer applied all suggestions, awaiting formal approval).
 - **[wazuh/wazuh-documentation#9512](https://github.com/wazuh/wazuh-documentation/pull/9512)** — reported that `wazuh-agent` silently uninstalls `wazuh-manager` on the same host via dpkg `Conflicts`/`Replaces` — hit the bug in production ([incident write-up](https://blog.pixelium.win/wazuh-silent-uninstall-incident/)).
@@ -46,7 +48,7 @@ Building and defending a self-hosted homelab — 53 LXC containers + 1 VM across
 ## Featured
 
 - [pixelium.win](https://github.com/ferr079/pixelium-site) — Bilingual portfolio (Astro + Cloudflare Workers), 13 pages EN+FR, live KV stats, tri-state service status, SessionImprint (each page signed with its own commit SHA), interactive topology map (62 nodes), Workers AI chat
-- [blog.pixelium.win](https://github.com/ferr079/blog-pixelium) — 25 articles on homelab ops, AIOps, self-hosting, incidents, and OSS contributions (three formats: dossier / pr-notes / incident)
+- [blog.pixelium.win](https://github.com/ferr079/blog-pixelium) — 32 articles on homelab ops, AIOps, self-hosting, incidents, and OSS contributions (three formats: dossier / pr-notes / incident)
 - [homelab-scripts](https://github.com/ferr079/homelab-scripts) — monitoring & backup scripts (cert-check, http-check, pve-status, loki-query, pbs-backup)
 - [claude-code-cybersec-skills](https://github.com/ferr079/claude-code-cybersec-skills) — 31 cybersecurity slash commands for Claude Code (17 offensive + 14 defensive)
 - [kv-push](https://github.com/ferr079/kv-push) — Push 15+ homelab metrics (services tri-state, Proxmox 4 nodes, Claude usage stats) to Cloudflare KV for live dashboards
