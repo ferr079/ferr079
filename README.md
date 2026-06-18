@@ -22,7 +22,7 @@ Building and defending a self-hosted homelab — 53 LXC containers + 1 VM across
 
 ## CTF Profiles
 
-[![HTB Badge](https://www.hackthebox.com/badge/image/1161145)](https://app.hackthebox.com/users/1161145)
+[![HTB Badge](https://www.hackthebox.com/badge/image/1161145)](https://pixelium.win/ctf)
 [![THM Badge](https://tryhackme-badges.s3.amazonaws.com/ferr0.png)](https://tryhackme.com/p/ferr0)
 
 [Root-Me — Ferr0 (765 pts)](https://www.root-me.org/Ferr0?lang=en)
