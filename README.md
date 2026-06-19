@@ -48,8 +48,8 @@ Building and defending a self-hosted homelab — 53 LXC containers + 1 VM across
 
 ## Featured
 
-- [pixelium.win](https://github.com/ferr079/pixelium-site) — Bilingual portfolio (Astro + Cloudflare Workers), 13 pages EN+FR, live KV stats, tri-state service status, SessionImprint (each page signed with its own commit SHA), interactive topology map (62 nodes), Workers AI chat
-- [blog.pixelium.win](https://github.com/ferr079/blog-pixelium) — 32 articles on homelab ops, AIOps, self-hosting, incidents, and OSS contributions (three formats: dossier / pr-notes / incident)
+- [pixelium.win](https://github.com/ferr079/pixelium-site) — Bilingual portfolio (Astro + Cloudflare Workers), 13 pages EN+FR, live KV stats, tri-state service status, SessionImprint (each page signed with its own commit SHA), interactive topology map (64 nodes), Workers AI chat
+- [blog.pixelium.win](https://github.com/ferr079/blog-pixelium) — 34 articles on homelab ops, AIOps, self-hosting, incidents, and OSS contributions (three formats: dossier / pr-notes / incident)
 - [homelab-public](https://github.com/ferr079/homelab-public) — Architecture & design notes for a 4-node, 50+ LXC fully self-hosted homelab (no paid cloud): topology, building-blocks rationale, security posture
 - [promtail-to-alloy](https://github.com/ferr079/promtail-to-alloy) — Migrate a logging fleet from Grafana Promtail (EOL) to Alloy: component mapping, ready-to-adapt `.alloy` templates, and production gotchas (born from the alloy [#6474](https://github.com/grafana/alloy/issues/6474) fleet-wide DNS storm)
 - [homelab-scripts](https://github.com/ferr079/homelab-scripts) — monitoring & backup scripts (cert-check, http-check, pve-status, loki-query, pbs-backup)
