@@ -3,7 +3,7 @@
 Infrastructure engineer & offensive security practitioner.
 Building and defending a self-hosted homelab — 53 LXC containers + 1 VM across 4 Proxmox nodes — operated day-to-day with **Claude Code (Max)** as AI pair-operator: writing the tooling, running the playbooks, auditing the infra.
 
-[pixelium.win](https://pixelium.win) | [blog](https://blog.pixelium.win) | [contributions](https://pixelium.win/contributions) | [lab](https://pixelium.win/ia)
+[pixelium.win](https://pixelium.win) | [blog](https://blog.pixelium.win) | [contributions](https://pixelium.win/contributions) | [infra](https://pixelium.win/infrastructure)
 
 > **Currently**: single-agent AIops — Hermes (Telegram correspondent, 4 scheduled crons incl. doc-sync that auto-edits the wiki from infra deltas and an Astro radar that opens an upgrade brief when this stack's own framework moves) backed by native detection (Wazuh 38 agents, CrowdSec, Beszel, Uptime-Kuma 39 monitors → ntfy) and Dagu orchestration (WOL-driven PBS backups, Cloudflare KV metrics every 5 min). Plus RAPTOR (source-code security audit, distrobox). Grafana SOC dashboard, LiteLLM hub with 4-provider failback (MiniMax → Gemini → Groq → OpenRouter), VictoriaMetrics, Loki 30-day retention.
 
