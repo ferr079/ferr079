@@ -5,14 +5,14 @@ Building and defending a self-hosted homelab — 55+ LXC containers + 1 VM acros
 
 [pixelium.win](https://pixelium.win) | [blog](https://blog.pixelium.win) | [contributions](https://pixelium.win/contributions) | [infra](https://pixelium.win/infrastructure) | [Hugging Face](https://huggingface.co/Ferr0)
 
-> **Currently**: single-agent AIops — Hermes (Telegram correspondent, 4 scheduled crons incl. doc-sync that auto-edits the wiki from infra deltas and an Astro radar that opens an upgrade brief when this stack's own framework moves) backed by native detection (Wazuh 38 agents, CrowdSec, Beszel, Uptime-Kuma 39 monitors → ntfy) and Dagu orchestration (WOL-driven PBS backups, Cloudflare KV metrics every 5 min). Plus RAPTOR (source-code security audit, distrobox). Grafana SOC dashboard, LiteLLM hub with 4-provider failback (MiniMax → Gemini → Groq → OpenRouter), VictoriaMetrics, Loki 30-day retention.
+> **Currently**: single-agent AIops — Hermes (Telegram correspondent, 4 scheduled crons incl. doc-sync that auto-edits the wiki from infra deltas and an Astro radar that opens an upgrade brief when this stack's own framework moves) backed by native detection (Wazuh 38 agents, CrowdSec, Beszel, Uptime-Kuma 44 monitors → ntfy) and Dagu orchestration (WOL-driven PBS backups, Cloudflare KV metrics every 5 min). Plus RAPTOR (source-code security audit, distrobox). Grafana SOC dashboard, LiteLLM hub with 4-provider failback (MiniMax → Gemini → Groq → OpenRouter), VictoriaMetrics, Loki 30-day retention.
 
 ---
 
 ## Stack
 
-**Infrastructure** : Proxmox · Ansible · Traefik · CrowdSec · Wazuh · Headscale · step-ca
-**AI Agents** : Hermes · RAPTOR · opencode (CTF/red-team) · MiniMax M3 · Ollama (RTX 3090)
+**Infrastructure** : Proxmox · Ansible · Traefik · CrowdSec · Wazuh · Headscale · step-ca · SSH CA (ephemeral certs) · Agent Vault (credential proxy)
+**AI Agents** : Claude Code (primary driver) · Hermes (24/7 ops) · opencode (GLM-5.2, CTF/red-team) · kimi-code (side projects) · Ollama (RTX 3090)
 **Cloud** : Cloudflare Workers · R2 · KV · D1 · Workers AI
 **Code** : Rust · Python · Bash · TypeScript
 **Web** : Astro · Pure CSS · Cloudflare Workers
@@ -25,7 +25,7 @@ Building and defending a self-hosted homelab — 55+ LXC containers + 1 VM acros
 [![HTB Badge](https://www.hackthebox.com/badge/image/1161145)](https://pixelium.win/ctf)
 [![THM Badge](https://tryhackme-badges.s3.amazonaws.com/ferr0.png)](https://tryhackme.com/p/ferr0)
 
-[Root-Me — Ferr0 (765 pts)](https://www.root-me.org/Ferr0?lang=en)
+[Root-Me — Ferr0 (980 pts)](https://www.root-me.org/Ferr0?lang=en)
 
 ## GitHub Stats
 
@@ -55,8 +55,8 @@ Selected highlights — the full list, with write-ups, lives on [pixelium.win/co
 
 ## Featured
 
-- [pixelium.win](https://github.com/ferr079/pixelium-site) — Bilingual portfolio (Astro + Cloudflare Workers), 13 pages EN+FR, live KV stats, tri-state service status, SessionImprint (each page signed with its own commit SHA), interactive topology map (60+ nodes), Workers AI chat
-- [blog.pixelium.win](https://github.com/ferr079/blog-pixelium) — 35+ articles on homelab ops, AIOps, self-hosting, incidents, and OSS contributions (three formats: dossier / pr-notes / incident)
+- [pixelium.win](https://github.com/ferr079/pixelium-site) — Bilingual portfolio (Astro + Cloudflare Workers), 9 pages EN+FR, live KV stats, tri-state service status, SessionImprint (each page signed with its own commit SHA), interactive topology map (60+ nodes), Workers AI chat
+- [blog.pixelium.win](https://github.com/ferr079/blog-pixelium) — 40+ articles on homelab ops, AIOps, self-hosting, incidents, and OSS contributions (three formats: dossier / pr-notes / incident)
 - [huggingface.co/Ferr0](https://huggingface.co/Ferr0) — 2 live ZeroGPU Spaces: *Structured Output Playground* (schema-constrained JSON) & *Adversarial SAST* (two-stage code audit, anti-false-positive) — built on Gradio + Outlines, also exposed as MCP tools; 4 curated model collections
 - [homelab-public](https://github.com/ferr079/homelab-public) — Architecture & design notes for a 4-node, 55+ LXC fully self-hosted homelab (no paid cloud): topology, building-blocks rationale, security posture
 - [promtail-to-alloy](https://github.com/ferr079/promtail-to-alloy) — Migrate a logging fleet from Grafana Promtail (EOL) to Alloy: component mapping, ready-to-adapt `.alloy` templates, and production gotchas (born from the alloy [#6474](https://github.com/grafana/alloy/issues/6474) fleet-wide DNS storm)
