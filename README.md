@@ -12,13 +12,13 @@ Building and defending a self-hosted homelab — 60+ LXC containers + 1 VM acros
 ## Stack
 
 **Infrastructure** : Proxmox · Ansible · Traefik · CrowdSec · Wazuh · Headscale · step-ca · SSH CA (ephemeral certs) · Agent Vault (credential proxy)
-**AI Agents** : Claude Code (primary driver) · Hermes (24/7 ops) · opencode (GLM-5.2, CTF/red-team) · kimi-code (side projects) · grok build (SuperGrok — adversarial critic, second read before shipping) · Ollama (RTX 3090)
+**AI Agents** : Claude Code (primary driver) · codex (OpenAI) · grok build (SuperGrok — adversarial critic) · kimi-code (Moonshot) · pi (minimal, hackable harness) · opencode (local Ollama; offensive twin isolated on pve3) · Hermes (24/7 ops) · Ollama (RTX 3090)
 **Cloud** : Cloudflare Workers · R2 · KV · D1 · Workers AI
 **Code** : Rust · Python · Bash · TypeScript
 **Web** : Astro · Pure CSS · Cloudflare Workers
 **Monitoring** : VictoriaMetrics · Grafana · Beszel · Uptime-Kuma · Patchmon · Loki · Healthchecks · ntfy
 **Orchestration** : LiteLLM (4-provider failback) · Dagu · Node-RED · MQTT (Mosquitto) · 4 Hermes crons + 15 Dagu DAGs
-**AI workflow** : Claude Code (Max) — primary driver for infra ops, IaC & security audits · custom skills + MCP servers (Proxmox, Forgejo, NetBox, Cloudflare, Semble code search, Hugging Face)
+**AI workflow** : Claude Code (Max) as primary driver, flanked by a bench of terminal coding agents that cross-review substantial work through the local Forgejo forge — branches, pull requests, CI as referee, nothing merged on a single model's word · custom skills + MCP servers (Proxmox, Forgejo, NetBox, Cloudflare, Semble code search, Hugging Face)
 
 ## CTF Profiles
 
