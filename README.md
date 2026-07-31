@@ -29,8 +29,10 @@ Building and defending a self-hosted homelab — 62 LXC containers + 1 VM across
 
 ## GitHub Stats
 
-![Stats](https://github-readme-stats.vercel.app/api?username=ferr079&show_icons=true&theme=tokyonight&hide_border=true)
-![Langages](https://github-readme-stats.vercel.app/api/top-langs/?username=ferr079&layout=compact&theme=tokyonight&hide_border=true)
+![Stats](https://pixelium.win/gh-card.svg)
+![Langages](https://pixelium.win/lang-card.svg)
+
+<sub>Self-hosted cards — generated at build time on my own Cloudflare Worker ([source](https://github.com/ferr079/pixelium-site/blob/main/src/lib/gh-card.ts)). They replaced github-readme-stats, whose public deployment now answers `503 DEPLOYMENT_PAUSED`. Commits are counted on the self-hosted forge, where the code actually lives.</sub>
 
 ## Recent OSS contributions
 
@@ -40,7 +42,7 @@ Selected highlights — the full list, with write-ups, lives on [pixelium.win/co
 - **[gadievron/raptor#777](https://github.com/gadievron/raptor/pull/777)** ✅ *fix merged* — *fix(sandbox): env-overridable default profile for rootless podman/distrobox.* On rootless podman the sandbox's kernel isolation (mount-ns, Landlock) can't engage, so the `full` profile half-engages: `semgrep`/`codeql` emit nothing and `raptor scan` silently reports **0 findings in 0 files** instead of failing loudly — a security scanner that looks clean when it never ran. The maintainer declined my env-override on trust-model grounds but shipped his own fail-loud fix ([#800](https://github.com/gadievron/raptor/pull/800) — silence env-warning under strict_env + route Landlock-only attribution), which I validated end to end on rootless distrobox incl. `--extra-config` — **merged**.
 - **[BerriAI/litellm#29412](https://github.com/BerriAI/litellm/pull/29412)** — review: MiniMax-M3's context window is 1M, not the 512K **billing threshold**; the cost-map merged with the wrong value and my follow-up fix PRs were swallowed by litellm's ephemeral staging pipeline — a lesson in reading a repo's merge flow before contributing.
 - **[ublue-os/bluefin#4741](https://github.com/ublue-os/bluefin/issues/4741)** — *bug: default JXL wallpaper renders blank on F44 (no gdk-pixbuf JXL loader).* `libjxl` ships the codec but no pixbuf loader, so `gnome-bg` can't decode the default `.jxl` background. Root-caused to [`03-packages.sh#L202`](https://github.com/projectbluefin/bluefin/blob/main/build_files/base/03-packages.sh#L202), cross-referenced the sibling LTS fix (bluefin-lts#1230) and why it doesn't transpose to Fedora.
-- **[community-scripts/ProxmoxVE#14870](https://github.com/community-scripts/ProxmoxVE/pull/14870)** ✅ *merged* — Infisical update aborted and left the service down: the script read `Database Password:` but `setup_postgresql_db` writes `Password:`. Diagnosed from a production incident on my own CT, reported as [#14868](https://github.com/community-scripts/ProxmoxVE/issues/14868), fixed upstream.
+- **[community-scripts/ProxmoxVE#14868](https://github.com/community-scripts/ProxmoxVE/issues/14868)** ✅ *fix merged* — Infisical update aborted and left the service down: the script read `Database Password:` but `setup_postgresql_db` writes `Password:`. Diagnosed from a production incident on my own CT and reported with the mismatch pinned down; the maintainer shipped the one-line fix from that report ([#14870](https://github.com/community-scripts/ProxmoxVE/pull/14870), merged).
 - **[community-scripts/ProxmoxVE#14995](https://github.com/community-scripts/ProxmoxVE/pull/14995)** ✅ *merged* — changedetection: migrated the Python install from pip `--ignore-installed` (duplicate dist-info + deferred crash on restart) to the project's own `setup_uv` venv helper, with automatic migration of existing installs — fixing the root cause behind their earlier #13548 band-aid (+33 −17).
 - **[community-scripts/ProxmoxVE#14996](https://github.com/community-scripts/ProxmoxVE/pull/14996)** ✅ *merged* — homelable: preserve the MCP server config across updates (it was overwritten on every run).
 - **[RightNow-AI/openfang#1060](https://github.com/RightNow-AI/openfang/pull/1060)** ✅ *merged* — fix(security): unified SSRF protection for WASM host calls. Closed a gap where `host_functions.rs` validated targets less strictly than `web_fetch.rs`; −42 net lines, 908 tests green.
