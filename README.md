@@ -66,7 +66,7 @@ Selected highlights — the full list, with write-ups, lives on [pixelium.win/co
 - [humanizer-fr](https://github.com/ferr079/humanizer-fr) — French adaptation of the `humanizer` Claude Code skill: 33 locale-specific AI-writing patterns (anglicisms, typographic tells, filler formulas) that the English original can't catch — MIT, attribution preserved, [validated as a separate locale repo by the upstream maintainer](https://github.com/blader/humanizer/issues/163)
 - [promtail-to-alloy](https://github.com/ferr079/promtail-to-alloy) — Migrate a logging fleet from Grafana Promtail (EOL) to Alloy: component mapping, ready-to-adapt `.alloy` templates, and production gotchas (born from the alloy [#6474](https://github.com/grafana/alloy/issues/6474) fleet-wide DNS storm)
 - [homelab-scripts](https://github.com/ferr079/homelab-scripts) — monitoring & backup scripts (cert-check, http-check, pve-status, loki-query, pbs-backup)
-- [claude-code-cybersec-skills](https://github.com/ferr079/claude-code-cybersec-skills) — 31 cybersecurity slash commands for Claude Code (17 offensive + 14 defensive)
+- [claude-code-cybersec-skills](https://github.com/ferr079/claude-code-cybersec-skills) — Claude Code plugin: 31 cybersecurity runbooks (17 offensive — CTF/pentest, 14 defensive — blue team/hardening), MITRE ATT&CK mapped, installable straight from the repo
 - [kv-push](https://github.com/ferr079/kv-push) — Push 15+ homelab metrics (services tri-state, Proxmox 4 nodes, Claude usage stats) to Cloudflare KV for live dashboards
 - [pbs-autobackup](https://github.com/ferr079/pbs-autobackup) — Proxmox Backup Server orchestration with Wake-on-LAN
 - [cert-check](https://github.com/ferr079/cert-check) — TLS certificate expiration monitor for self-hosted services
