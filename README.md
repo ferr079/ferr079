@@ -5,7 +5,7 @@ Building and defending a self-hosted homelab — 62 LXC containers + 1 VM across
 
 [pixelium.win](https://pixelium.win) | [blog](https://blog.pixelium.win) | [contributions](https://pixelium.win/contributions) | [infra](https://pixelium.win/infrastructure) | [AI usage](https://pixelium.win/claude) | [Hugging Face](https://huggingface.co/Ferr0)
 
-> **Currently**: single-agent AIops — Hermes (Telegram correspondent, 4 scheduled crons incl. doc-sync that auto-edits the wiki from infra deltas and an Astro radar that opens an upgrade brief when this stack's own framework moves) backed by native detection (Wazuh 38 agents, CrowdSec, Beszel 53 agents, Uptime-Kuma 43 monitors → ntfy) and Dagu orchestration (WOL-driven PBS backups, Cloudflare KV metrics every 15 min). Plus RAPTOR (source-code security audit, distrobox). Grafana SOC dashboard, LiteLLM hub with 4-provider failback (MiniMax → Gemini → Groq → OpenRouter), VictoriaMetrics, Loki 30-day retention.
+> **Currently**: single-agent AIops — Hermes (Telegram correspondent, 3 scheduled jobs: a liveness heartbeat, a nightly tech-watch digest, and an Astro radar that opens an upgrade brief when this stack's own framework moves) backed by native detection (Wazuh 38 agents, CrowdSec, Beszel 53 agents, Uptime-Kuma 43 monitors → ntfy) and Dagu orchestration (WOL-driven PBS backups, Cloudflare KV metrics every 15 min). Plus RAPTOR (source-code security audit, distrobox). Grafana SOC dashboard, LiteLLM hub with 4-provider failback (MiniMax → Gemini → Groq → OpenRouter), VictoriaMetrics, Loki 30-day retention.
 
 ---
 
@@ -17,7 +17,7 @@ Building and defending a self-hosted homelab — 62 LXC containers + 1 VM across
 **Code** : Rust · Python · Bash · TypeScript
 **Web** : Astro · Pure CSS · Cloudflare Workers
 **Monitoring** : VictoriaMetrics · Grafana · Beszel · Uptime-Kuma · Patchmon · Loki · Healthchecks · ntfy
-**Orchestration** : LiteLLM (4-provider failback) · Dagu · Node-RED · MQTT (Mosquitto) · 4 Hermes crons + 8 Dagu DAGs
+**Orchestration** : LiteLLM (4-provider failback) · Dagu · Node-RED · MQTT (Mosquitto) · 3 Hermes jobs + 18 Dagu DAGs
 **AI workflow** : Claude Code (Max) as primary driver, flanked by a bench of terminal coding agents that cross-review substantial work through the local Forgejo forge — branches, pull requests, CI as referee, nothing merged on a single model's word · custom skills + MCP servers (Proxmox, Forgejo, NetBox, Cloudflare, Semble code search, Hugging Face)
 
 ## CTF Profiles
