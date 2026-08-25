@@ -1,0 +1,51 @@
+name: Refresh README stats
+
+# Les compteurs du profil étaient recopiés à la main. Le dernier passage manuel
+# a tenu trois jours avant que huit chiffres sur douze ne dérivent — et ils
+# sous-vendaient (rang HTB #296 affiché pour #253 réel). Ce workflow les relit
+# depuis la même source que le site.
+
+on:
+  schedule:
+    # 05:20 UTC — après le rebake quotidien du site, pour lire des stats fraîches
+    # et non celles de la veille.
+    - cron: '20 5 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'README.tpl.md'
+      - 'scripts/render-readme.mjs'
+      - '.github/workflows/refresh-readme.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-readme
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+
+      - name: Render README from live stats
+        run: node scripts/render-readme.mjs
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- README.md; then
+            echo "README.md inchangé — rien à committer."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "chore(readme): refresh live counters from /api/stats"
+          git push
