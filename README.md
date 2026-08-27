@@ -33,7 +33,7 @@ Building and defending a self-hosted homelab — 59 LXC containers + 1 VM across
 [![HTB Badge](https://www.hackthebox.com/badge/image/1161145)](https://pixelium.win/ctf)
 [![THM Badge](https://tryhackme-badges.s3.amazonaws.com/ferr0.png)](https://tryhackme.com/p/ferr0)
 
-**[HTB — Pro Hacker](https://pixelium.win/ctf)** · #248 global · 115 flags (57 system · 58 user) · 36 fortress flags · [Root-Me — Ferr0 (1050 pts)](https://www.root-me.org/Ferr0?lang=en)
+**[HTB — Pro Hacker](https://pixelium.win/ctf)** · #242 global · 117 flags (58 system · 59 user) · 39 fortress flags · [Root-Me — Ferr0 (1050 pts)](https://www.root-me.org/Ferr0?lang=en)
 
 ## GitHub Stats
 
@@ -69,7 +69,7 @@ Selected highlights — the full list, with write-ups, lives on [pixelium.win/co
 
 - [pixelium.win](https://github.com/ferr079/pixelium-site) — Bilingual portfolio (Astro 7 + Cloudflare Workers), 9 pages EN+FR, live KV stats, tri-state service status, SessionImprint (each page signed with its own commit SHA), interactive topology map (73 nodes, exported straight from the Proxmox API), Workers AI chat
 - [blog.pixelium.win](https://github.com/ferr079/blog-pixelium) — 42 articles on homelab ops, AIOps, self-hosting, incidents, and OSS contributions (three formats: dossier / pr-notes / incident)
-- [huggingface.co/Ferr0](https://huggingface.co/Ferr0) — 2 live ZeroGPU Spaces: *Structured Output Playground* (schema-constrained JSON) & *Adversarial SAST* (two-stage code audit, anti-false-positive) — built on Gradio + Outlines, also exposed as MCP tools; 6 curated model collections
+- [huggingface.co/Ferr0](https://huggingface.co/Ferr0) — 6 curated model collections, kept in step with the models actually running on the 3090. Two ZeroGPU Spaces are published but currently offline: *Structured Output Playground* (schema-constrained JSON) & *Adversarial SAST* (two-stage code audit, anti-false-positive) — built on Gradio + Outlines
 - [homelab-public](https://github.com/ferr079/homelab-public) — Architecture & design notes for a 4-node, 61-LXC fully self-hosted homelab (no paid cloud): topology, building-blocks rationale, security posture
 - [humanizer-fr](https://github.com/ferr079/humanizer-fr) — French adaptation of the `humanizer` Claude Code skill: 33 locale-specific AI-writing patterns (anglicisms, typographic tells, filler formulas) that the English original can't catch — MIT, attribution preserved, [validated as a separate locale repo by the upstream maintainer](https://github.com/blader/humanizer/issues/163)
 - [promtail-to-alloy](https://github.com/ferr079/promtail-to-alloy) — Migrate a logging fleet from Grafana Promtail (EOL) to Alloy: component mapping, ready-to-adapt `.alloy` templates, and production gotchas (born from the alloy [#6474](https://github.com/grafana/alloy/issues/6474) fleet-wide DNS storm)
