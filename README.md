@@ -9,11 +9,11 @@
 # > whoami
 
 Infrastructure engineer & offensive security practitioner.
-Building and defending a self-hosted homelab — 58 LXC containers + 1 VM across 4 Proxmox nodes — operated day-to-day with **Claude Code (Max)** as AI pair-operator: writing the tooling, running the playbooks, auditing the infra.
+Building and defending a self-hosted homelab — 59 LXC containers + 1 VM across 4 Proxmox nodes — operated day-to-day with **Claude Code (Max)** as AI pair-operator: writing the tooling, running the playbooks, auditing the infra.
 
 [pixelium.win](https://pixelium.win) | [blog](https://blog.pixelium.win) | [contributions](https://pixelium.win/contributions) | [infra](https://pixelium.win/infrastructure) | [AI usage](https://pixelium.win/claude) | [Hugging Face](https://huggingface.co/Ferr0)
 
-> **Currently**: single-agent AIops — Hermes (Telegram correspondent, 3 scheduled jobs: a liveness heartbeat, a nightly tech-watch digest, and an Astro radar that opens an upgrade brief when this stack's own framework moves) backed by native detection (Wazuh 36 agents, CrowdSec, Beszel 51 agents, Uptime-Kuma 41 monitors → ntfy) and Dagu orchestration (WOL-driven PBS backups, Cloudflare KV metrics every 15 min). Plus RAPTOR (source-code security audit, distrobox). Grafana SOC dashboard, LiteLLM hub with 4-provider failback (MiniMax → Gemini → Groq → OpenRouter), VictoriaMetrics, Loki 30-day retention.
+> **Currently**: single-agent AIops — Hermes (Telegram correspondent, 3 scheduled jobs: a liveness heartbeat, a nightly tech-watch digest, and an Astro radar that opens an upgrade brief when this stack's own framework moves) backed by native detection (Wazuh 37 agents, CrowdSec, Beszel 52 agents, Uptime-Kuma 41 monitors → ntfy) and Dagu orchestration (WOL-driven PBS backups, Cloudflare KV metrics every 15 min). Plus RAPTOR (source-code security audit, distrobox). Grafana SOC dashboard, LiteLLM hub with 4-provider failback (MiniMax → Gemini → Groq → OpenRouter), VictoriaMetrics, Loki 30-day retention.
 
 ---
 
