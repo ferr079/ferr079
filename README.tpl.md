@@ -1,11 +1,6 @@
 <!-- Généré depuis README.tpl.md par .github/workflows/refresh-readme.yml.
      Ne pas éditer ce fichier : éditer le template. Ses jetons sont résolus
-     depuis https://pixelium.win/api/stats à chaque exécution.
-
-     Exception assumée : le nombre de moniteurs Uptime-Kuma reste écrit en
-     dur — aucune clé ne le publie côté KV. C'est le seul chiffre de ce
-     fichier qui peut encore dériver ; le jour où kv-push le publiera,
-     y poser un jeton suffira (clé `uptime_kuma_monitors`). -->
+     depuis https://pixelium.win/api/stats à chaque exécution. -->
 # > whoami
 
 Infrastructure engineer & offensive security practitioner.
@@ -13,7 +8,7 @@ Building and defending a self-hosted homelab — {{lxc_count}} LXC containers + 
 
 [pixelium.win](https://pixelium.win) | [blog](https://blog.pixelium.win) | [contributions](https://pixelium.win/contributions) | [infra](https://pixelium.win/infrastructure) | [AI usage](https://pixelium.win/claude) | [Hugging Face](https://huggingface.co/Ferr0)
 
-> **Currently**: single-agent AIops — Hermes (Telegram correspondent, 3 scheduled jobs: a liveness heartbeat, a nightly tech-watch digest, and an Astro radar that opens an upgrade brief when this stack's own framework moves) backed by native detection (Wazuh {{wazuh_agents}} agents, CrowdSec, Beszel {{beszel_agents}} agents, Uptime-Kuma 41 monitors → ntfy) and Dagu orchestration (WOL-driven PBS backups, Cloudflare KV metrics every 15 min). Plus RAPTOR (source-code security audit, distrobox). Grafana SOC dashboard, LiteLLM hub with 4-provider failback (MiniMax → Gemini → Groq → OpenRouter), VictoriaMetrics, Loki 30-day retention.
+> **Currently**: single-agent AIops — Hermes (Telegram correspondent, 3 scheduled jobs: a liveness heartbeat, a nightly tech-watch digest, and an Astro radar that opens an upgrade brief when this stack's own framework moves) backed by native detection (Wazuh {{wazuh_agents}} agents, CrowdSec, Beszel {{beszel_agents}} agents, Uptime-Kuma {{uptime_kuma_monitors}} monitors → ntfy) and Dagu orchestration (WOL-driven PBS backups, Cloudflare KV metrics every 15 min). Plus RAPTOR (source-code security audit, distrobox). Grafana SOC dashboard, LiteLLM hub with 4-provider failback (MiniMax → Gemini → Groq → OpenRouter), VictoriaMetrics, Loki 30-day retention.
 
 ---
 
