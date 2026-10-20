@@ -28,7 +28,7 @@ Building and defending a self-hosted homelab — 60 LXC containers + 1 VM across
 [![HTB Badge](https://www.hackthebox.com/badge/image/1161145)](https://pixelium.win/ctf)
 [![THM Badge](https://tryhackme-badges.s3.amazonaws.com/ferr0.png)](https://tryhackme.com/p/ferr0)
 
-**[HTB — Pro Hacker](https://pixelium.win/ctf)** · #223 global · 131 flags (65 system · 66 user) · 43 fortress flags · [Root-Me — Ferr0 (1050 pts)](https://www.root-me.org/Ferr0?lang=en)
+**[HTB — Pro Hacker](https://pixelium.win/ctf)** · #221 global · 132 flags (65 system · 67 user) · 43 fortress flags · [Root-Me — Ferr0 (1050 pts)](https://www.root-me.org/Ferr0?lang=en)
 
 ## GitHub Stats
 
