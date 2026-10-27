@@ -4,11 +4,11 @@
 # > whoami
 
 Infrastructure engineer & offensive security practitioner.
-Building and defending a self-hosted homelab — 60 LXC containers + 1 VM across 4 Proxmox nodes — operated day-to-day with **Claude Code (Max)** as AI pair-operator: writing the tooling, running the playbooks, auditing the infra.
+Building and defending a self-hosted homelab — 58 LXC containers + 1 VM across 4 Proxmox nodes — operated day-to-day with **Claude Code (Max)** as AI pair-operator: writing the tooling, running the playbooks, auditing the infra.
 
 [pixelium.win](https://pixelium.win) | [blog](https://blog.pixelium.win) | [contributions](https://pixelium.win/contributions) | [infra](https://pixelium.win/infrastructure) | [AI usage](https://pixelium.win/claude) | [Hugging Face](https://huggingface.co/Ferr0)
 
-> **Currently**: single-agent AIops — Hermes (Telegram correspondent, 3 scheduled jobs: a liveness heartbeat, a nightly tech-watch digest, and an Astro radar that opens an upgrade brief when this stack's own framework moves) backed by native detection (Wazuh 46 agents, CrowdSec, Beszel 54 agents, Uptime-Kuma 49 monitors → ntfy) and Dagu orchestration (WOL-driven PBS backups, Cloudflare KV metrics every 15 min). Plus RAPTOR (source-code security audit, distrobox). Grafana SOC dashboard, LiteLLM hub with 4-provider failback (MiniMax → Gemini → Groq → OpenRouter), VictoriaMetrics, Loki 30-day retention.
+> **Currently**: single-agent AIops — Hermes (Telegram correspondent, 3 scheduled jobs: a liveness heartbeat, a nightly tech-watch digest, and an Astro radar that opens an upgrade brief when this stack's own framework moves) backed by native detection (Wazuh 44 agents, CrowdSec, Beszel 52 agents, Uptime-Kuma 49 monitors → ntfy) and Dagu orchestration (WOL-driven PBS backups, Cloudflare KV metrics every 15 min). Plus RAPTOR (source-code security audit, distrobox). Grafana SOC dashboard, LiteLLM hub with 4-provider failback (MiniMax → Gemini → Groq → OpenRouter), VictoriaMetrics, Loki 30-day retention.
 
 ---
 
@@ -20,7 +20,7 @@ Building and defending a self-hosted homelab — 60 LXC containers + 1 VM across
 **Code** : Rust · Python · Bash · TypeScript
 **Web** : Astro · Pure CSS · Cloudflare Workers
 **Monitoring** : VictoriaMetrics · Grafana · Alloy · Beszel · Uptime-Kuma · Patchmon · Loki · Healthchecks · ntfy
-**Orchestration** : LiteLLM (4-provider failback) · Dagu · Node-RED · MQTT (Mosquitto) · 3 Hermes jobs + 31 Dagu DAGs
+**Orchestration** : LiteLLM (4-provider failback) · Dagu · Node-RED · MQTT (Mosquitto) · 3 Hermes jobs + 29 Dagu DAGs
 **AI workflow** : Claude Code (Max) as primary driver, flanked by a bench of terminal coding agents living in herdr on a 24/7 hub (one system account per agent) that cross-review substantial work through the local Forgejo forge — branches, pull requests, CI as referee, nothing merged on a single model's word · custom skills + MCP servers (Proxmox, Forgejo, NetBox, Cloudflare, Semble code search, Hugging Face)
 
 ## CTF Profiles
@@ -28,7 +28,7 @@ Building and defending a self-hosted homelab — 60 LXC containers + 1 VM across
 [![HTB Badge](https://www.hackthebox.com/badge/image/1161145)](https://pixelium.win/ctf)
 [![THM Badge](https://tryhackme-badges.s3.amazonaws.com/ferr0.png)](https://tryhackme.com/p/ferr0)
 
-**[HTB — Pro Hacker](https://pixelium.win/ctf)** · #211 global · 137 flags (68 system · 69 user) · 43 fortress flags · [Root-Me — Ferr0 (1050 pts)](https://www.root-me.org/Ferr0?lang=en)
+**[HTB — Pro Hacker](https://pixelium.win/ctf)** · #210 global · 139 flags (69 system · 70 user) · 43 fortress flags · [Root-Me — Ferr0 (1050 pts)](https://www.root-me.org/Ferr0?lang=en)
 
 ## GitHub Stats
 
@@ -65,7 +65,7 @@ Selected highlights — the full list, with write-ups, lives on [pixelium.win/co
 - [pixelium.win](https://github.com/ferr079/pixelium-site) — Bilingual portfolio (Astro 7 + Cloudflare Workers), 15+ pages EN+FR, live KV stats, tri-state service status, SessionImprint (each page signed with its own commit SHA), interactive topology map (73 nodes, exported straight from the Proxmox API), Workers AI chat
 - [blog.pixelium.win](https://github.com/ferr079/blog-pixelium) — 42 articles on homelab ops, AIOps, self-hosting, incidents, and OSS contributions (three formats: dossier / pr-notes / incident)
 - [huggingface.co/Ferr0](https://huggingface.co/Ferr0) — curated model collections, kept in step with the models actually running on the 3090. Two ZeroGPU Spaces are published but currently offline: *Structured Output Playground* (schema-constrained JSON) & *Adversarial SAST* (two-stage code audit, anti-false-positive) — built on Gradio + Outlines
-- [homelab-public](https://github.com/ferr079/homelab-public) — Architecture & design notes for a 4-node, 60-LXC fully self-hosted homelab (no paid cloud): topology, building-blocks rationale, security posture
+- [homelab-public](https://github.com/ferr079/homelab-public) — Architecture & design notes for a 4-node, 58-LXC fully self-hosted homelab (no paid cloud): topology, building-blocks rationale, security posture
 - [humanizer-fr](https://github.com/ferr079/humanizer-fr) — French adaptation of the `humanizer` Claude Code skill, rebased on upstream v3.1.0: 29 AI-writing patterns (the 26 upstream ones adapted to French, plus anglicisms, connector stacking and empty verb phrases the English original can't catch), installable as a Claude Code plugin — MIT, attribution preserved, [validated as a separate locale repo by the upstream maintainer](https://github.com/blader/humanizer/issues/163)
 - [promtail-to-alloy](https://github.com/ferr079/promtail-to-alloy) — Migrate a logging fleet from Grafana Promtail (EOL) to Alloy: component mapping, ready-to-adapt `.alloy` templates, and production gotchas (born from the alloy [#6474](https://github.com/grafana/alloy/issues/6474) fleet-wide DNS storm)
 - [homelab-scripts](https://github.com/ferr079/homelab-scripts) — monitoring & backup scripts (cert-check, http-check, pve-status, loki-query)
