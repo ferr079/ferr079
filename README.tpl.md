@@ -8,19 +8,19 @@ Building and defending a self-hosted homelab — {{lxc_count}} LXC containers + 
 
 [pixelium.win](https://pixelium.win) | [blog](https://blog.pixelium.win) | [contributions](https://pixelium.win/contributions) | [infra](https://pixelium.win/infrastructure) | [AI usage](https://pixelium.win/claude) | [Hugging Face](https://huggingface.co/Ferr0)
 
-> **Currently**: single-agent AIops — Hermes (Telegram correspondent, 3 scheduled jobs: a liveness heartbeat, a nightly tech-watch digest, and an Astro radar that opens an upgrade brief when this stack's own framework moves) backed by native detection (Wazuh {{wazuh_agents}} agents, CrowdSec, Beszel {{beszel_agents}} agents, Uptime-Kuma {{uptime_kuma_monitors}} monitors → ntfy) and Dagu orchestration (WOL-driven PBS backups, Cloudflare KV metrics every 15 min). Plus RAPTOR (source-code security audit, distrobox). Grafana SOC dashboard, LiteLLM hub with 4-provider failback (MiniMax → Gemini → Groq → OpenRouter), VictoriaMetrics, Loki 30-day retention.
+> **Currently**: single-agent AIops — Hermes (resident agent in its own container, running on a schedule: a nightly tech-watch digest published to the internal wiki with a push notification, and a morning Astro radar that opens an upgrade brief when this stack's own framework moves) backed by native detection (Wazuh {{wazuh_agents}} agents, CrowdSec, Beszel {{beszel_agents}} agents, Uptime-Kuma {{uptime_kuma_monitors}} monitors → ntfy) and Dagu orchestration (WOL-driven PBS backups, Cloudflare KV metrics every 15 min). Plus RAPTOR (source-code security audit, distrobox). Grafana SOC dashboard, LiteLLM hub with multi-provider failback, VictoriaMetrics, Loki 30-day retention.
 
 ---
 
 ## Stack
 
-**Infrastructure** : Proxmox · Ansible · Traefik · CrowdSec · Wazuh · Headscale · step-ca · SSH CA (ephemeral certs) · Agent Vault (credential proxy)
-**AI Agents** : Claude Code (primary driver) · codex (OpenAI) · grok build (SuperGrok — adversarial critic) · pi (minimal, hackable harness) · opencode (local Ollama; offensive twin isolated on pve3) · Hermes (24/7 ops) · OMH (hermes-agent + oh-my-hermes, in training as infra operator) · Ollama (RTX 3090)
+**Infrastructure** : Proxmox · Ansible · Traefik · CrowdSec · Wazuh · Headscale · step-ca · SSH CA (ephemeral certs) · OpenBao (secrets)
+**AI Agents** : Claude Code (primary driver) · codex (OpenAI) · grok build (SuperGrok — adversarial critic) · pi (minimal, hackable harness) · opencode (local Ollama; offensive twin isolated on pve3) · Hermes (resident, scheduled jobs) · Ollama (RTX 3090)
 **Cloud** : Cloudflare Workers · R2 · KV · D1 · Workers AI
 **Code** : Rust · Python · Bash · TypeScript
 **Web** : Astro · Pure CSS · Cloudflare Workers
 **Monitoring** : VictoriaMetrics · Grafana · Alloy · Beszel · Uptime-Kuma · Patchmon · Loki · Healthchecks · ntfy
-**Orchestration** : LiteLLM (4-provider failback) · Dagu · Node-RED · MQTT (Mosquitto) · {{inv_hermes}} Hermes jobs + {{inv_dagu}} Dagu DAGs
+**Orchestration** : LiteLLM (multi-provider failback) · Dagu ({{inv_dagu}} DAGs) · Node-RED · MQTT (Mosquitto)
 **AI workflow** : Claude Code (Max) as primary driver, flanked by a bench of terminal coding agents living in herdr on a 24/7 hub (one system account per agent) that cross-review substantial work through the local Forgejo forge — branches, pull requests, CI as referee, nothing merged on a single model's word · custom skills + MCP servers (Proxmox, Forgejo, NetBox, Cloudflare, Semble code search, Hugging Face)
 
 ## CTF Profiles
