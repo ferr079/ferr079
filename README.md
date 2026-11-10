@@ -8,19 +8,19 @@ Building and defending a self-hosted homelab — 57 LXC containers + 1 VM across
 
 [pixelium.win](https://pixelium.win) | [blog](https://blog.pixelium.win) | [contributions](https://pixelium.win/contributions) | [infra](https://pixelium.win/infrastructure) | [AI usage](https://pixelium.win/claude) | [Hugging Face](https://huggingface.co/Ferr0)
 
-> **Currently**: single-agent AIops — Hermes (Telegram correspondent, 3 scheduled jobs: a liveness heartbeat, a nightly tech-watch digest, and an Astro radar that opens an upgrade brief when this stack's own framework moves) backed by native detection (Wazuh 43 agents, CrowdSec, Beszel 51 agents, Uptime-Kuma 49 monitors → ntfy) and Dagu orchestration (WOL-driven PBS backups, Cloudflare KV metrics every 15 min). Plus RAPTOR (source-code security audit, distrobox). Grafana SOC dashboard, LiteLLM hub with 4-provider failback (MiniMax → Gemini → Groq → OpenRouter), VictoriaMetrics, Loki 30-day retention.
+> **Currently**: single-agent AIops — Hermes (resident agent in its own container, running on a schedule: a nightly tech-watch digest published to the internal wiki with a push notification, and a morning Astro radar that opens an upgrade brief when this stack's own framework moves) backed by native detection (Wazuh 43 agents, CrowdSec, Beszel 51 agents, Uptime-Kuma 51 monitors → ntfy) and Dagu orchestration (WOL-driven PBS backups, Cloudflare KV metrics every 15 min). Plus RAPTOR (source-code security audit, distrobox). Grafana SOC dashboard, LiteLLM hub with multi-provider failback, VictoriaMetrics, Loki 30-day retention.
 
 ---
 
 ## Stack
 
-**Infrastructure** : Proxmox · Ansible · Traefik · CrowdSec · Wazuh · Headscale · step-ca · SSH CA (ephemeral certs) · Agent Vault (credential proxy)
-**AI Agents** : Claude Code (primary driver) · codex (OpenAI) · grok build (SuperGrok — adversarial critic) · pi (minimal, hackable harness) · opencode (local Ollama; offensive twin isolated on pve3) · Hermes (24/7 ops) · OMH (hermes-agent + oh-my-hermes, in training as infra operator) · Ollama (RTX 3090)
+**Infrastructure** : Proxmox · Ansible · Traefik · CrowdSec · Wazuh · Headscale · step-ca · SSH CA (ephemeral certs) · OpenBao (secrets)
+**AI Agents** : Claude Code (primary driver) · codex (OpenAI) · grok build (SuperGrok — adversarial critic) · pi (minimal, hackable harness) · opencode (local Ollama; offensive twin isolated on pve3) · Hermes (resident, scheduled jobs) · Ollama (RTX 3090)
 **Cloud** : Cloudflare Workers · R2 · KV · D1 · Workers AI
 **Code** : Rust · Python · Bash · TypeScript
 **Web** : Astro · Pure CSS · Cloudflare Workers
 **Monitoring** : VictoriaMetrics · Grafana · Alloy · Beszel · Uptime-Kuma · Patchmon · Loki · Healthchecks · ntfy
-**Orchestration** : LiteLLM (4-provider failback) · Dagu · Node-RED · MQTT (Mosquitto) · 3 Hermes jobs + 32 Dagu DAGs
+**Orchestration** : LiteLLM (multi-provider failback) · Dagu (32 DAGs) · Node-RED · MQTT (Mosquitto)
 **AI workflow** : Claude Code (Max) as primary driver, flanked by a bench of terminal coding agents living in herdr on a 24/7 hub (one system account per agent) that cross-review substantial work through the local Forgejo forge — branches, pull requests, CI as referee, nothing merged on a single model's word · custom skills + MCP servers (Proxmox, Forgejo, NetBox, Cloudflare, Semble code search, Hugging Face)
 
 ## CTF Profiles
@@ -28,7 +28,7 @@ Building and defending a self-hosted homelab — 57 LXC containers + 1 VM across
 [![HTB Badge](https://www.hackthebox.com/badge/image/1161145)](https://pixelium.win/ctf)
 [![THM Badge](https://tryhackme-badges.s3.amazonaws.com/ferr0.png)](https://tryhackme.com/p/ferr0)
 
-**[HTB — Pro Hacker](https://pixelium.win/ctf)** · #207 global · 143 flags (71 system · 72 user) · 43 fortress flags · [Root-Me — Ferr0 (1050 pts)](https://www.root-me.org/Ferr0?lang=en)
+**[HTB — Pro Hacker](https://pixelium.win/ctf)** · #202 global · 145 flags (72 system · 73 user) · 43 fortress flags · [Root-Me — Ferr0 (1050 pts)](https://www.root-me.org/Ferr0?lang=en)
 
 ## GitHub Stats
 
