@@ -20,7 +20,7 @@ Building and defending a self-hosted homelab — 57 LXC containers + 1 VM across
 **Code** : Rust · Python · Bash · TypeScript
 **Web** : Astro · Pure CSS · Cloudflare Workers
 **Monitoring** : VictoriaMetrics · Grafana · Alloy · Beszel · Uptime-Kuma · Patchmon · Loki · Healthchecks · ntfy
-**Orchestration** : LiteLLM (multi-provider failback) · Dagu (32 DAGs) · Node-RED · MQTT (Mosquitto)
+**Orchestration** : LiteLLM (multi-provider failback) · Dagu (34 DAGs) · Node-RED · MQTT (Mosquitto)
 **AI workflow** : Claude Code (Max) as primary driver, flanked by a bench of terminal coding agents living in herdr on a 24/7 hub (one system account per agent) that cross-review substantial work through the local Forgejo forge — branches, pull requests, CI as referee, nothing merged on a single model's word · custom skills + MCP servers (Proxmox, Forgejo, NetBox, Cloudflare, Semble code search, Hugging Face)
 
 ## CTF Profiles
@@ -28,7 +28,7 @@ Building and defending a self-hosted homelab — 57 LXC containers + 1 VM across
 [![HTB Badge](https://www.hackthebox.com/badge/image/1161145)](https://pixelium.win/ctf)
 [![THM Badge](https://tryhackme-badges.s3.amazonaws.com/ferr0.png)](https://tryhackme.com/p/ferr0)
 
-**[HTB — Pro Hacker](https://pixelium.win/ctf)** · #190 global · 145 flags (72 system · 73 user) · 43 fortress flags · [Root-Me — Ferr0 (1050 pts)](https://www.root-me.org/Ferr0?lang=en)
+**[HTB — Pro Hacker](https://pixelium.win/ctf)** · #182 global · 145 flags (72 system · 73 user) · 45 fortress flags · [Root-Me — Ferr0 (1050 pts)](https://www.root-me.org/Ferr0?lang=en)
 
 ## GitHub Stats
 
