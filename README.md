@@ -8,7 +8,7 @@ Building and defending a self-hosted homelab — 57 LXC containers + 1 VM across
 
 [pixelium.win](https://pixelium.win) | [blog](https://blog.pixelium.win) | [contributions](https://pixelium.win/contributions) | [infra](https://pixelium.win/infrastructure) | [AI usage](https://pixelium.win/claude) | [Hugging Face](https://huggingface.co/Ferr0)
 
-> **Currently**: single-agent AIops — Hermes (resident agent in its own container, running on a schedule: a nightly tech-watch digest published to the internal wiki with a push notification, and a morning Astro radar that opens an upgrade brief when this stack's own framework moves) backed by native detection (Wazuh 43 agents, CrowdSec, Beszel 51 agents, Uptime-Kuma 51 monitors → ntfy) and Dagu orchestration (WOL-driven PBS backups, Cloudflare KV metrics every 15 min). Plus RAPTOR (source-code security audit, distrobox). Grafana SOC dashboard, LiteLLM hub with multi-provider failback, VictoriaMetrics, Loki 30-day retention.
+> **Currently**: single-agent AIops — Hermes (resident agent in its own container, running on a schedule: a nightly tech-watch digest published to the internal wiki with a push notification, and a morning Astro radar that opens an upgrade brief when this stack's own framework moves) backed by native detection (Wazuh 43 agents, CrowdSec, Beszel 51 agents, Uptime-Kuma 50 monitors → ntfy) and Dagu orchestration (WOL-driven PBS backups, Cloudflare KV metrics every 15 min). Plus RAPTOR (source-code security audit, distrobox). Grafana SOC dashboard, LiteLLM hub with multi-provider failback, VictoriaMetrics, Loki 30-day retention.
 
 ---
 
@@ -28,7 +28,7 @@ Building and defending a self-hosted homelab — 57 LXC containers + 1 VM across
 [![HTB Badge](https://www.hackthebox.com/badge/image/1161145)](https://pixelium.win/ctf)
 [![THM Badge](https://tryhackme-badges.s3.amazonaws.com/ferr0.png)](https://tryhackme.com/p/ferr0)
 
-**[HTB — Pro Hacker](https://pixelium.win/ctf)** · #182 global · 145 flags (72 system · 73 user) · 45 fortress flags · [Root-Me — Ferr0 (1050 pts)](https://www.root-me.org/Ferr0?lang=en)
+**[HTB — Pro Hacker](https://pixelium.win/ctf)** · #179 global · 145 flags (72 system · 73 user) · 46 fortress flags · [Root-Me — Ferr0 (1050 pts)](https://www.root-me.org/Ferr0?lang=en)
 
 ## GitHub Stats
 
