@@ -15,7 +15,7 @@ Building and defending a self-hosted homelab — 57 LXC containers + 1 VM across
 ## Stack
 
 **Infrastructure** : Proxmox · Ansible · Traefik · CrowdSec · Wazuh · Headscale · step-ca · SSH CA (ephemeral certs) · OpenBao (secrets)
-**AI Agents** : Claude Code (primary driver) · codex (OpenAI) · grok build (SuperGrok — adversarial critic) · pi (minimal, hackable harness) · opencode (local Ollama; offensive twin isolated on pve3) · Hermes (resident, scheduled jobs) · Ollama (RTX 3090)
+**AI Agents** : Claude Code (primary driver) · codex (OpenAI) · grok build (SuperGrok — adversarial critic) · pi (minimal, hackable harness — the one on local weights, carries infra maintenance) · opencode (cloud subscription; offensive twin isolated on pve3) · Hermes (resident, scheduled jobs) · Ollama (RTX 3090)
 **Cloud** : Cloudflare Workers · R2 · KV · D1 · Workers AI
 **Code** : Rust · Python · Bash · TypeScript
 **Web** : Astro · Pure CSS · Cloudflare Workers
